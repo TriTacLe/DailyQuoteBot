@@ -33,6 +33,6 @@ if __name__ == "__main__":
   if quotes:
     for quote in range(len(quotes)):
       author, quote = quotes[quote]
-      print(f"{quote}")
-      #print(f"{quote} - {author}")
+      #print(f"{quote}")
+      print(f"{quote} - {author}")
 
