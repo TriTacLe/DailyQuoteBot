@@ -6,7 +6,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 import logging
 
 load_dotenv()
-from app.script.quote_selector import get_random_quote
+from script.quote_selector import get_random_quote
 
 TELEGRAM_BOT_TOKEN: Final[str | None] = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_BOT_USERNAME: Final[str | None] = os.getenv("TELEGRAM_BOT_USERNAME")

@@ -1,0 +1,8 @@
+# git metadata, cache folders, secret files
+venv/
+.git/
+__pycache__/
+*.pyc
+
+*.log
+pytest_cache/

@@ -1,24 +1,24 @@
 import random
 import logging
-from app.config import ENABLE_BLBE, ENABLE_KANYE, ENABLE_MOTIVATIONAL
+from config import ENABLE_BLBE, ENABLE_KANYE, ENABLE_MOTIVATIONAL
 
 def _bible() -> str | None:
     logging.info("_bible() called")
-    from app.clients.bible import fetch_bible_verse
+    from clients.bible import fetch_bible_verse
     for _, book, chapter, verse, text in fetch_bible_verse(1, ""):
         return (f"{book} {chapter}:{verse} – {text}")
     return None
     
 def _motivational() -> str | None:
     logging.info("_motivational() called")
-    from app.clients.motivational import fetch_motivational_quotes
+    from clients.motivational import fetch_motivational_quotes
     for author, quote in fetch_motivational_quotes(1):
         return (f"{quote} – {author}")
     return None
 
 def _kanye()-> str | None:
     logging.info("_kanye() called")
-    from app.clients.kanye import fetch_kanye_quotes
+    from clients.kanye import fetch_kanye_quotes
     for quote in fetch_kanye_quotes(1):
         return(f"{quote}\n")
     return None

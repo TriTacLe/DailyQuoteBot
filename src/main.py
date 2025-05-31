@@ -1,5 +1,4 @@
-import os 
-from app.notifications.notifier import run_bot
+from notifications.notifier import run_bot
 import logging
 
 def main():
@@ -10,8 +9,8 @@ def main():
   try:
     logging.info("Starting telegram bot")
     run_bot()
-  except:
-    logging.error(f"error")
+  except Exception as exception:
+    logging.error(f"errrrror: {exception}")
   
 if __name__ == "__main__":
   main()
