@@ -28,3 +28,10 @@ docker compose logs -f dailyboatcarry
 docker compose stop
 docker compose start
 ```
+
+Check
+
+```bash
+docker images
+docker ps -a
+```
