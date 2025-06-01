@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  dailybot:
+    build: .
+    image: dailyquotebot
+    container_name: dailyquotebot-container
+    env_file:
+      - .env
+    restart: unless-stopped
