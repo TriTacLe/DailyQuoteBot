@@ -4,11 +4,20 @@ pip freeze -> requirements.txt
 
 # Docker
 
-Build the image, name the container
+Manually
 
 ```bash
-docker build -t dailyboatcarry .
-docker run docker run -d --name dailyboatcarry dailyboatcarry
+docker build -t dailyboatcarry:latest .
+docker rm -f dailyboatcarry-container
+docker rmi dailyboatcarry:latest
+docker run -d --name dailyboatcarry-container dailyboatcarry:latest
+```
+
+Docker compose
+
+```bash
+docker compose down
+docker compose up -d
 ```
 
 Dockerfile
