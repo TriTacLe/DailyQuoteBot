@@ -1,4 +1,5 @@
 ```bash
 cd src
-python -m app.notifications.notifier
+python -m src.notifications.listener
+python -m src.notifications.scheduling
 ```
