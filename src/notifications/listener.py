@@ -11,10 +11,12 @@ TELEGRAM_BOT_TOKEN: Final[str | None] = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_BOT_USERNAME: Final[str | None] = os.getenv("TELEGRAM_BOT_USERNAME")
 
 async def quote_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+  print(f"Quote command accessed. {update}")
   await update.message.reply_text(get_random_quote())
   
 def handle_response(text: str | None)-> str | None:
   processed_text: str | None = text.lower()
+  print(text)
   if "w" in processed_text:
     return get_random_quote()
   return get_random_quote()
@@ -22,6 +24,7 @@ def handle_response(text: str | None)-> str | None:
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
   message_type: str = update.message.chat.type 
   text: str = update.message.text or ""
+  print(text)
   
   # check if group chat or dms
   logging.info(f"User ({update.message.chat.id}) in {message_type}: '{text}'")
@@ -41,6 +44,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return 
   
   logging.info(f"bot:  {response}")
+  print(f"bot:  {response}")
   await update.message.reply_text(response)
   
 async def error(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -48,12 +52,14 @@ async def error(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
   
 def run_bot():
   logging.info(f"Starting the telegram bot")
+  print(f"Starting the telegram bot")
   app = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
   app.add_handler(CommandHandler("w", quote_command))
   app.add_handler(MessageHandler(filters.TEXT, handle_message))
   app.add_error_handler(error)
   
   logging.info("Polling now")
+  print("Polling now")
   app.run_polling(poll_interval=3)
   
 if __name__ == "__main__":
