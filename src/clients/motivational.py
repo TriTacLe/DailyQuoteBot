@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-BASE_URL_MOTIVATIONAL = os.getenv("BASE_URL_MOTIVATIONAL")
+BASE_URL_MOTIVATIONAL = "https://stoic.tekloon.net/stoic-quote"
 
 def fetch_motivational_quotes_data() -> dict | None:
   url = f"{BASE_URL_MOTIVATIONAL}"
