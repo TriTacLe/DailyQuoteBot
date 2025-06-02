@@ -126,6 +126,8 @@ docker rm -f dailyquotebot-container
 1. Start service
 
 ```bash
+docker compose down
+docker compose up --build
 docker compose up -d
 ```
 
@@ -148,4 +150,5 @@ docker compose logs -f dailyquotebot
 ```bash
 docker compose stop
 docker compose start
+pip freeze -> requirements.txt
 ```
