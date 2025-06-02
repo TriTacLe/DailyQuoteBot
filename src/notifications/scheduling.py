@@ -20,7 +20,7 @@ TIME_UTC_2 = "22:26"
 
 def send_quote(schedule_time: str):
   print("schedule_time()")
-  message = f"{get_random_quote()} (time: {schedule_time})"
+  message = f"{get_random_quote()}" #(time: {schedule_time})"
   url = (
     f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
     f"/sendMessage?chat_id={TELEGRAM_CHAT_ID}"
@@ -39,7 +39,7 @@ def setup_daily_quotes() -> None:
   if main_time:
     schedule.every().day.at(main_time).do(send_quote, main_time)
 
-  setup_tests_times()
+  #setup_tests_times()
 
 def setup_tests_times() -> None:
   schedule.every().day.at(TIME_UTC_1).do(send_quote, TIME_UTC_1)
