@@ -3,6 +3,13 @@ services:
     build: .
     image: dailyquotebot
     container_name: dailyquotebot-container
+    environment:
+      - TZ=${CONTINENT}/${CITY}
+      - BASE_URL_BIBLE=${BASE_URL_BIBLE}
+      - BASE_URL_KANYE=${BASE_URL_KANYE}
+      - BASE_URL_MOTIVATIONAL=${BASE_URL_MOTIVATIONAL}
     env_file:
       - .env
+    command: ["python", "-m", "src.main"]
     restart: unless-stopped
+#docker-compose --env-file .env up
