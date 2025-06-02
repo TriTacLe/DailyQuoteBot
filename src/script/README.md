@@ -1,4 +1,3 @@
 ```bash
-cd /src
-python -m app.script.quote_selector
+python -m src.script.quote_selector
 ```

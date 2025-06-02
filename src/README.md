@@ -1,4 +1,4 @@
 ```bash
 cd src
-python -m app.main
+python -m src.main
 ```
