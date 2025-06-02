@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes 
 import logging
-from script.quote_selector import get_random_quote
+from src.script.quote_selector import get_random_quote
 
 load_dotenv()
 TELEGRAM_BOT_TOKEN: Final[str | None] = os.getenv("TELEGRAM_BOT_TOKEN")
