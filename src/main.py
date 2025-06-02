@@ -12,7 +12,7 @@ def main():
     logging.info("Starting telegram bot: schedule_send_quote() and run_bot()")
     print("Starting telegram bot: schedule_send_quote() and run_bot()")
     
-    scheduler_thread = Thread(target=run_scheduler, daemon=True)
+    scheduler_thread = Thread(target=run_scheduler, daemon=False)
     scheduler_thread.start()
     run_bot()
   except Exception as exception:

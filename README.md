@@ -73,6 +73,10 @@ ENABLE_MOTIVATIONAL=true
 TELEGRAM_BOT_TOKEN=<your_bot_token>
 TELEGRAM_BOT_USERNAME=@YourBotUsername
 TELEGRAM_CHAT_ID=<your_chat_id>
+
+# docker
+CONTINENT=Continent
+CITY=City
 ```
 
 3. Save `.env`
@@ -129,6 +133,8 @@ docker rm -f dailyquotebot-container
 docker compose down
 docker compose up --build
 docker compose up -d
+#or
+docker-compose up -d --build
 ```
 
 2. Stop service

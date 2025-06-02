@@ -13,10 +13,10 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 TIME = os.getenv("TIME")
 
 # Hardcoded for testing
-TIME_1 = "18:30"
-TIME_2 = "18:31"
-TIME_3 = "18:32"
-TIME_4 = "18:33"
+TIME_LOCAL_1 = "19:25"
+TIME_LOCAL_2 = "19:26"
+TIME_UTC_1 = "22:25"
+TIME_UTC_2 = "22:26"
 
 def send_quote(schedule_time: str):
   print("schedule_time()")
@@ -42,10 +42,10 @@ def setup_daily_quotes() -> None:
   setup_tests_times()
 
 def setup_tests_times() -> None:
-  schedule.every().day.at(TIME_1).do(send_quote, TIME_1)
-  schedule.every().day.at(TIME_2).do(send_quote, TIME_2)
-  schedule.every().day.at(TIME_3).do(send_quote, TIME_3)
-  schedule.every().day.at(TIME_4).do(send_quote, TIME_4)  
+  schedule.every().day.at(TIME_UTC_1).do(send_quote, TIME_UTC_1)
+  schedule.every().day.at(TIME_LOCAL_1).do(send_quote, TIME_LOCAL_1)
+  schedule.every().day.at(TIME_UTC_2).do(send_quote, TIME_UTC_2)
+  schedule.every().day.at(TIME_LOCAL_2).do(send_quote, TIME_LOCAL_2)  
 
 def run_scheduler() -> None:
   print("Started run_scheduler()")
